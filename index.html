@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>幅計算ツール</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+      function calculate() {
+        const w_all = parseFloat(document.getElementById('w_all').value);
+        const w_unit = parseFloat(document.getElementById('w_unit').value);
+        const n = parseInt(document.getElementById('n').value);
+
+        if (!isNaN(w_all) && !isNaN(w_unit) && !isNaN(n) && n > 0) {
+          const bunshi = w_all - w_unit * n;
+          const bunbo = n + 1;
+          const result = bunshi / bunbo;
+          const roundedResult = Math.round(result * 10) / 10;
+          document.getElementById('result').innerText = roundedResult;
+        } else {
+          document.getElementById('result').innerText = '計算できません';
+        }
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form onsubmit="return calculate();">
+        <dl>
+          <dt>全体の幅（mm）</dt>
+          <dd><input type="text" id="w_all"></dd>
+          <dt>木材の幅（mm）</dt>
+          <dd><input type="text" id="w_unit"></dd>
+          <dt>本数（本）</dt>
+          <dd><input type="text" id="n"></dd>
+          <dt>計算結果（mm）</dt>
+          <dd><p><strong id="result"></strong></p></dd>
+        </dl>
+        <input type="submit" value="計算する">
+      </form>
+    </div>
+  </body>
+</html>

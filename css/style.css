@@ -1,0 +1,49 @@
+body {
+  color: #333333;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-feature-settings: "palt";
+  letter-spacing: 0.025em;
+  overflow-x: hidden;
+}
+a {
+  color: #333333;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 32px;
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0 16px;
+  }
+}
+
+dl {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(1, 100px auto);
+  align-items: center;
+  gap: 16px;
+}
+input {
+  font-size: 16px;
+  padding: 0.5em;
+  margin: 0;
+}
+strong {
+  font-weight: bold;
+  font-size: 18px;
+  color: red;
+}
+input[type="submit"] {
+  margin-top: 40px;
+}
